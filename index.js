@@ -33,6 +33,14 @@ app.get('/contact', (req, res) => {
 app.get('/post', (req, res) => {
   res.render('post')
 })
+app.get('/post/:id', async (req, res) => {
+  const blogPost = await BlogPost.findById(req.params.id)
+  console.log(blogPost)
+  res.render('post',{
+    blogPost: blogPost
+  })
+})
+
 app.get('/posts/new', (req, res) => {
   res.render('create')
 })
