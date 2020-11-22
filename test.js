@@ -12,7 +12,7 @@ mongoose.connect('mongodb://localhost/my_database', { useNewUrlParser: true })
 //   console.log(error, blogPost)
 // })
 
-// const id = "5fb9ff44eb825b057921432a"
+const id = "5fba51ba1586060f93f86250"
 
 
 // テストデータの検索(Read)
@@ -38,4 +38,3 @@ mongoose.connect('mongodb://localhost/my_database', { useNewUrlParser: true })
 // BlogPost.findByIdAndDelete(id, (error, blogPost)=>{
 //   console.log(error, blogPost)
 // })
-
