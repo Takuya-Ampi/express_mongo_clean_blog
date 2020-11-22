@@ -13,6 +13,14 @@ const ejs = require('ejs')
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
+const validateMiddleWare = (req, res, next) => {
+  if(req.files === null || req.body.title === null || req.body.body === null){
+    return res.redirect('/posts/new')
+  }
+  next()
+}
+app.use('/posts/store', validateMiddleWare)
+
 mongoose.connect('mongodb://localhost/my_database', { useNewUrlParser: true })
 
 app.listen(4000, () => {
