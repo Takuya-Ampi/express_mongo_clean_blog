@@ -3,6 +3,7 @@ const path = require('path')
 const newPostController = require('./controllers/newPost')
 const newUserController = require('./controllers/newUser')
 const loginController = require('./controllers/login')
+const loginUserController = require('./controllers/loginUser')
 const homeController = require('./controllers/home')
 const getPostController = require('./controllers/getPost')
 const storePostController = require('./controllers/storePost')
@@ -23,7 +24,7 @@ app.use(express.static('public'))
 
 app.use('/posts/store', validateMiddleWare.validation)
 
-mongoose.connect('mongodb://localhost/my_database', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost/my_database', { useNewUrlParser: true, useCreateIndex: true })
 
 app.listen(4000, () => {
   console.log('App listen 4000');
@@ -45,3 +46,4 @@ app.get('/auth/register', newUserController.get_new_user)
 
 app.post('/posts/store', storePostController.store_post)
 app.post('/users/register', storeUserController.store_user)
+app.post('/users/login', loginUserController.login_user)
