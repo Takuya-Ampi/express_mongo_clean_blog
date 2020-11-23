@@ -14,7 +14,7 @@ module.exports = {
       }
       const check_password = bcrypt.compareSync(password, user.password)
       if(check_password){
-        res.redirect('/')
+        res.redirect('/admin')
       } else {
         res.redirect('/auth/login')
       }
