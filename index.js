@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const newPostController = require('./controllers/newPost')
+const newUserController = require('./controllers/newUser')
 const homeController = require('./controllers/home')
 const getPostController = require('./controllers/getPost')
 const storePostController = require('./controllers/storePost')
@@ -37,5 +38,6 @@ app.get('/post', getPostController.get_post)
 app.get('/post/:id', getPostController.get_post_id)
 
 app.get('/posts/new', newPostController.get_new_post)
+app.get('/auth/register', newUserController.get_new_user)
 
 app.post('/posts/store', storePostController.store_post)
