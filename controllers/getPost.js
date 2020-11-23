@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
-require('../models/BlogPost')
-const BlogPost = mongoose.model('BlogPost')
+const BlogPost = require('../models/BlogPost')
 
 module.exports = {
   get_post_id: async (req, res) => {

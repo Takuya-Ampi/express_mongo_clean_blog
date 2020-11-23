@@ -1,8 +1,7 @@
 const mongoose = require('mongoose')
 const path = require('path')
 const bcrypt = require('bcrypt')
-require('../models/User')
-const User = mongoose.model('User')
+const User = require('../models/User')
 
 module.exports = {
   store_user: (req, res) => {
